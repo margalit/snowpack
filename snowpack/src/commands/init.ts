@@ -7,7 +7,7 @@ import {CommandOptions} from '../types';
 export async function command(commandOptions: CommandOptions) {
   const {config} = commandOptions;
   logger.info(`Creating new project configuration file... ${dim('(snowpack.config.js)')}`);
-  const templateLoc = path.join(__dirname, '../../assets/snowpack-init-file.js');
+  const templateLoc = path.join(__dirname, '../assets/snowpack-init-file.js');
   const destLoc = path.join(config.root, 'snowpack.config.js');
   if (existsSync(destLoc)) {
     logger.error(`Error: File already exists, cannot overwrite ${destLoc}`);
